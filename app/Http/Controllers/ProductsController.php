@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Helpers\ApiHelpers;
+use App\Http\Requests\SaveProductRequest;
 use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
@@ -37,7 +38,7 @@ class ProductsController extends Controller
      * @param Request $request
      * @return JsonResponse
      */
-    public function store(Request $request)
+    public function store(SaveProductRequest $request)
     {
         $product = new Product();
         $product->name = $request->name;
